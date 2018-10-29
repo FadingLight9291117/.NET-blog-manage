@@ -657,7 +657,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\comment\" />
     <Folder Include="Views\WriteBlog\" />
   </ItemGroup>
   <ItemGroup>
