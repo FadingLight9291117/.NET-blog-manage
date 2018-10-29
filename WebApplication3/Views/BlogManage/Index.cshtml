@@ -132,24 +132,18 @@
 <div id="create" class="panel">
     <div class="content">
         <h2>新建博文</h2>
-
-                                                    <form name="form2" action="/WriteBlog/Index" method="post">
-                                                        标题：<input type="text" id="title" name="Title"><br>
-                                                        简介：<input type="text" id="synopsis" name="Synopsis"><br>
-                                                        推荐值：<input type="text" id="Star" name="Star"  ><br>
-                                                        图片：<input type="text" name="Image"> 
-                                  
-                                                      
-                                                        正文：
-                                                        <script id="content" name="Content"></script><br>
-                                                        模块：<select style="width:auto;color:black;" id="Module" name="Module">
-                                                            <option value=1>学无止境</option>
-                                                            <option value=2>科学技术</option>
-                                                        </select>
-                                                        <input type="submit" id="sb2" value="发布" />
-                                                    </form>
-
-
+        <form name="form2" action="/WriteBlog/Index" method="post">
+            标题：<input type="text" id="title" name="Title"><br>
+            简介：<input type="text" id="synopsis" name="Synopsis"><br>
+            推荐值：<input type="text" id="Star" name="Star"  ><br>
+            图片：<input type="text" name="Image">                   
+            正文：<script id="content" name="Content"></script><br>
+            模块：<select style="width:auto;color:black;" id="Module" name="Module">
+                <option value=1>学无止境</option>
+                <option value=2>科学技术</option>
+            </select>
+            <input type="submit" id="sb2" value="发布" />
+        </form>
     </div>
 </div>
     <!-- /create -->
