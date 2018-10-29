@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="personal_blogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="administrator_Table">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Image" Type="text" Nullable="false" />
+          <Property Name="Phonenumber" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="char" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="int" Nullable="false" />
+          <Property Name="LoginPwd" Type="varchar" MaxLength="50" />
+          <Property Name="AdminName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="blog_Table">
+          <Key>
+            <PropertyRef Name="BlogID" />
+          </Key>
+          <Property Name="BlogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Synopsis" Type="text" Nullable="false" />
+          <Property Name="Content" Type="ntext" Nullable="false" />
+          <Property Name="Image" Type="text" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="View_number" Type="int" Nullable="false" />
+          <Property Name="Like_number" Type="int" Nullable="false" />
+          <Property Name="Comment_numbe" Type="int" Nullable="false" />
+          <Property Name="Star" Type="float" Nullable="false" />
+          <Property Name="Module" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="comment_Table">
+          <Key>
+            <PropertyRef Name="CommentID" />
+            <PropertyRef Name="BlogID" />
+          </Key>
+          <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BlogID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Phonenumber" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Content" Type="text" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="personal_blogModelStoreContainer">
+          <EntitySet Name="administrator_Table" EntityType="Self.administrator_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="blog_Table" EntityType="Self.blog_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="comment_Table" EntityType="Self.comment_Table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="personal_blogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="administrator_Table">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phonenumber" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="Int32" Nullable="false" />
+          <Property Name="LoginPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="blog_Table">
+          <Key>
+            <PropertyRef Name="BlogID" />
+          </Key>
+          <Property Name="BlogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Synopsis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="View_number" Type="Int32" Nullable="false" />
+          <Property Name="Like_number" Type="Int32" Nullable="false" />
+          <Property Name="Comment_numbe" Type="Int32" Nullable="false" />
+          <Property Name="Star" Type="Double" Nullable="false" />
+          <Property Name="Module" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="comment_Table">
+          <Key>
+            <PropertyRef Name="CommentID" />
+            <PropertyRef Name="BlogID" />
+          </Key>
+          <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BlogID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Phonenumber" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="personal_blogEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="administrator_Table" EntityType="Self.administrator_Table" />
+          <EntitySet Name="Admins" EntityType="Self.Admins" />
+          <EntitySet Name="blog_Table" EntityType="Self.blog_Table" />
+          <EntitySet Name="comment_Table" EntityType="Self.comment_Table" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="personal_blogModelStoreContainer" CdmEntityContainer="personal_blogEntities3">
+          <EntitySetMapping Name="administrator_Table">
+            <EntityTypeMapping TypeName="personal_blogModel.administrator_Table">
+              <MappingFragment StoreEntitySet="administrator_Table">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Phonenumber" ColumnName="Phonenumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="personal_blogModel.Admins">
+              <MappingFragment StoreEntitySet="Admins">
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="LoginPwd" ColumnName="LoginPwd" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="blog_Table">
+            <EntityTypeMapping TypeName="personal_blogModel.blog_Table">
+              <MappingFragment StoreEntitySet="blog_Table">
+                <ScalarProperty Name="BlogID" ColumnName="BlogID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Synopsis" ColumnName="Synopsis" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="View_number" ColumnName="View_number" />
+                <ScalarProperty Name="Like_number" ColumnName="Like_number" />
+                <ScalarProperty Name="Comment_numbe" ColumnName="Comment_numbe" />
+                <ScalarProperty Name="Star" ColumnName="Star" />
+                <ScalarProperty Name="Module" ColumnName="Module" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="comment_Table">
+            <EntityTypeMapping TypeName="personal_blogModel.comment_Table">
+              <MappingFragment StoreEntitySet="comment_Table">
+                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+                <ScalarProperty Name="BlogID" ColumnName="BlogID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phonenumber" ColumnName="Phonenumber" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
