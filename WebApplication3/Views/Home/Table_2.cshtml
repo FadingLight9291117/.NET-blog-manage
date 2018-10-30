@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/Base_Layout.cshtml";
+}
+
+
+@model IEnumerable<WebApplication3.EF.blog_Table>
+
+<script>
+    function read(id) {
+        $.ajax({
+            type: "get",
+            url: "/Home/Read?id=" + id,
+            data: null,
+            dataType: null,
+            success: function () {
+                window.location.href = "/Home/Read?id=" + id;
+            }
+        });
+    }
+</script>
+
+<script>
+    function read(id) {
+        $.ajax({
+            type: "get",
+            url: "/Home/Read?id=" + id,
+            data: null,
+            dataType: null,
+            success: function () {
+                window.location.href = "/Home/Read?id=" + id;
+            }
+        });
+    }
+</script>
+
+
+<ul class="sidenews">
+    <h2>站长推荐</h2>
+    @{ 
+        int i = 0;
+    }
+    @foreach (var item in Model)
+    {
+        <li>
+            <i><img src="@item.Image"></i>
+            <p><a href="javascript:void(0)" onclick="read(@item.BlogID)">@item.Title</a></p>
+            <span>@item.DateTime</span>
+        </li>
+        if (++i == 5)
+        {
+            break;
+        }
+    }
+
+</ul>

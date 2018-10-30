@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Study";
+}
+@model IEnumerable<WebApplication3.EF.blog_Table>
+
+<script>
+    function read(id) {
+        $.ajax({
+            type: "get",
+            url: "/Home/Read?id=" + id,
+            data: null,
+            dataType: null,
+            success: function () {
+                window.location.href = "/Home/Read?id=" + id;
+            }
+        });
+    }
+</script>
+
+<main>
+    <h2 class="place">您现在的位置是：网站首页&gt; <a href="/">学无止境</a></h2>
+
+    <div class="bloglist">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <i class="blogpic"><a asp-action="Read"><img src="@item.Image" alt=""> </a></i>
+                    <dl>
+                        <dt><a href="#" target="_blank">@item.Title</a></dt>
+                        <dd>
+                            <span class="bloginfo">@item.Synopsis</span>
+                            <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">@item.DateTime</span></p>
+                            <a id="btn" class="read" href="javascript:void(0)" onclick="read(@item.BlogID)">阅读更多</a>
+                        </dd>
+                    </dl>
+                </li>
+            }
+        </ul>
+    </div>
+    <!--bloglist end-->
+    @*<div class="pagelist"><a title="Total record">&nbsp;<b>163</b> </a>&nbsp;&nbsp;&nbsp;<b>1</b>&nbsp;<a href="/jstt/index_2.html">2</a>&nbsp;<a href="/jstt/index_3.html">3</a>&nbsp;<a href="/jstt/index_4.html">4</a>&nbsp;<a href="/jstt/index_5.html">5</a>&nbsp;<a href="/jstt/index_6.html">6</a>&nbsp;<a href="/jstt/index_2.html">下一页</a>&nbsp;<a href="/jstt/index_14.html">尾页</a></div>*@
+</main>
+@Html.Action("Table")
+
+
+

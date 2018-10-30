@@ -1,43 +1,71 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication</title>
+    <link href="~/Content/mycontent/css/base.css" rel="stylesheet">
+    <link href="~/Content/mycontent/css/index.css" rel="stylesheet" />
+    <link href="~/Content/mycontent/css/m.css" rel="stylesheet">
+    <script src="~/Content/mycontent/js/jquery.min.js"></script>
+    <script src="~/Content/mycontent/js/hc-sticky.js"></script>
+    <script src="~/Content/mycontent/js/comm.js"></script>
+    <script src="~/Content/mycontent/js/myPage.js"></script>
+
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("应用程序名称", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                </ul>
+<body onload="goPage(1,9)">
+    <header id="header">
+        <div class="navbar">
+            <div class="topbox">
+                <p class="welcome">您好，欢迎您访问我的个人博客，在这里，它不仅仅是记录个人的平台，更是一个记录世界、时代的平台！</p>
+                <div class="searchbox">
+                    <div id="search_bar" class="search_bar">
+                        <form id="searchform" action="[!--news.url--]e/search/index.php" method="post" name="searchform">
+                            <input class="input" placeholder="想搜点什么呢.." type="text" name="keyboard" id="keyboard">
+                            <input type="hidden" name="show" value="title" />
+                            <input type="hidden" name="tempid" value="1" />
+                            <input type="hidden" name="tbname" value="news">
+                            <input type="hidden" name="Submit" value="搜索" />
+                            <p class="search_ico"> <span></span></p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
+        <div class="header-navigation">
+            <nav>
+                <div class="logo">个人博客</div>
+                <h2 id="mnavh"><span class="navicon"></span></h2>
+                <ul id="starlist">
+                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
+                    <li>@Html.ActionLink("关于我", "About", "Home")</li>
+                    <li>@Html.ActionLink("学无止境", "Study", "Home")</li>
+                    <li>@Html.ActionLink("科学技术", "Science", "Home")</li>
+                    <li>@Html.ActionLink("登陆", "Index", "Login")</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div class="wrapper">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+    <!--wrapper end-->
+    <footer>
+        <div class="footer">
+
+            <div class="bzjj">
+                <h2>本站简介</h2>
+                <p>个人博客</p>
+            </div>
+
+        </div>
+    </footer>
+    <a href="#" class="cd-top">Top</a>
+  
 </body>
 </html>

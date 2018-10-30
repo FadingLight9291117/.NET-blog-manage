@@ -1,0 +1,26 @@
+﻿.bloginfo {
+    overflow: hidden;
+    font-size:12px;
+    color:brown;
+}
+.bloginfo li{
+    float:left;
+    position:relative;
+    margin-right:10px;
+}
+.infomname{
+
+}
+.infotime{
+
+}
+.infonumber{
+
+}
+.synopsis{
+    margin-top:10px;
+    background-color:antiquewhite;
+    font-size:13px;
+    padding-left:10px;
+    padding-right:10px;
+}

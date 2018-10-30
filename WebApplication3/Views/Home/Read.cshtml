@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Read";
+}
+
+<link href="~/Content/mycontent/css/read.css" rel="stylesheet" />
+
+<main>
+    <div class="aboutbox">
+        <h2 class="place">您现在的位置是：网站首页&gt; <a href="/">@ViewBag.Module</a></h2>
+        <div class="abinfos">
+            <h3>@ViewBag.Title1</h3>
+            <div class="bloginfo">
+                <ul>
+                    <li class="infomname">@ViewBag.Module</li>
+                    <li class="infotime">@ViewBag.DateTime</li>
+                    <li class="infonumber">@ViewBag.View_number 已阅读</li>
+                </ul>
+            </div>
+            <div class="synopsis">
+                <p>
+                    <strong>简介</strong>&nbsp;@ViewBag.Synopsis
+                </p>
+            </div>
+            @Html.Raw(ViewBag.Content)
+            <p>&nbsp;</p>
+            <br />
+            <h3>欢迎联系我</h3>
+            <p>邮 箱：123456789@wust.com</p>
+            <p>电 话：123456789121</p>
+        </div>
+    </div>
+</main>
+@Html.Action("Table")
+
+

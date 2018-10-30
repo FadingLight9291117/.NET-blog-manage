@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Science";
+}
+
+@model IEnumerable<WebApplication3.EF.blog_Table>
+
+<script>
+    function read(id) {
+        $.ajax({
+            type: "get",
+            url: "/Home/Read?id=" + id,
+            data: null,
+            dataType: null,
+            success: function () {
+                window.location.href = "/Home/Read?id=" + id;
+            }
+        });
+    }
+</script>
+
+<main>
+    <h2 class="place">您现在的位置是：网站首页&gt; <a href="/">科学技术</a></h2>
+
+    <div class="sharelist" id="idData">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <div class="tpic"><img src="@item.Image"></div>
+                    <b>@item.Title</b>
+                    <span>@item.Synopsis</span>
+                    <a class="readmore" href="javascript:void(0)" onclick="read(@item.BlogID)">阅读原文</a>
+                </li>
+            }
+        </ul>
+    </div>
+</main>
+
+@Html.Action("Table")
+
+<table style="width:60%" align="right">
+    <tr>
+        <td>
+            <div id="barcon" name="barcon">
+            </div>
+        </td>
+    </tr>
+</table>

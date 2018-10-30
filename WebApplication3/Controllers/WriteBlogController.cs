@@ -31,7 +31,9 @@ namespace WebApplication3.Controllers
             db.blog_Table.Add(movie);
             db.SaveChanges();
             return RedirectToAction("Index", "BlogManage");
-                
+
+        
+        
         }
     }
 }
