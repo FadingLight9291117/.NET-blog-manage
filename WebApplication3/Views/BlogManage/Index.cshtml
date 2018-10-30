@@ -86,58 +86,60 @@
 }
 
 
-< !--editprofile -->
-            <div id="editprofile" class="panel">
-                <div class="content">
-                    <h2>修改信息</h2>
-                    <form name="form1" onSubmit="return checkform();" action="" method="get" enctype="multipart/form-data">
-                        <table>
-                            <tr>
-                                <td align="right">用户名</td>
-                                <td align="left"><input type="text" id="user" name="user"></td>
-                    </tr>
+<div id="editprofile" class="panel">
+     <div class="content">
+         <h2>修改信息</h2>
+         <form name="form1" onSubmit="return checkform();" action="" method="get" enctype="multipart/form-data">
+             <table>
+                 <tr>
+                     <td align="right">用户名</td>
+                     <td align="left"><input type="text" id="user" name="user"></td>
+                 </tr>
+                 
+                 <tr>
+                     <td align="right">密码</td>
+                     <td align="left"><input type="password" id="password" name="password"></td>
+                 </tr>
 
-                                <tr>
-                                    <td align="right">密码</td>
-                                    <td align="left"><input type="password" id="password" name="password"></td>
-                    </tr>
+                 <tr>
+                     <td align="right">确认密码</td>
+                     <td align="left"><input type="password" id="password1" name="password1"></td>
+                 </tr>
 
-                                    <tr>
-                                        <td align="right">确认密码</td>
-                                        <td align="left"><input type="password" id="password1" name="password1"></td>
-                    </tr>
+                 <tr>
+                     <td align="right">头像</td>
+                     <td align="left"><input type="file" name="photo" id="photo" required="required"></td>
+                 </tr>
 
-                                        <tr>
-                                            <td align="right">头像</td>
-                                            <td align="left"><input type="file" name="photo" id="photo" required="required"></td>
-                    </tr>
+                 <tr>
+                      <td align="right">邮箱</td>
+                      <td align="left"><input type="text" name="email" id="email"></td>
+                 </tr>
 
-                                            <tr>
-                                                <td align="right">邮箱</td>
-                                                <td align="left"><input type="text" name="email" id="email"></td>
-                    </tr>
+                 <tr>
+                      <td align="right">手机号</td>
+                      <td align="left"><input type="text" name="phonenumber" id="phonenumber"></td>
+                 </tr>
 
-                                                <tr>
-                                                    <td align="right">手机号</td>
-                                                    <td align="left"><input type="text" name="phonenumber" id="phonenumber"></td>
-                    </tr>
-
-                                                    <tr><td></td><td><input type="submit" id="sb1" value="修改"> <input type="reset" value="重填"></td></tr>
-                </table>
-            </form>
-        </div>
+                 <tr>
+                      <td></td>
+                      <td><input type="submit" id="sb1" value="修改"> <input type="reset" value="重填"></td>
+                 </tr>
+             </table>
+         </form>
+     </div>
 </div>
-                                            <!-- /editprofile -->
-<!-- create -->
+
+
 <div id="create" class="panel">
     <div class="content">
         <h2>新建博文</h2>
         <form name="form2" action="/WriteBlog/Index" method="post">
             标题：<input type="text" id="title" name="Title"><br>
-            简介：<input type="text" id="synopsis" name="Synopsis"><br>
-            推荐值：<input type="text" id="Star" name="Star"  ><br>
-            图片：<input type="text" name="Image">                   
-            正文：<script id="content" name="Content"></script><br>
+            简介：<input type="text" id="synopsis" name="Synopsis" required="required"><br>
+            推荐值：<input type="number" id="Star" name="Star" min="0" max="10" required="required"><br>
+            图片：<input type="text" name="Image" required="required">                   
+            正文：<script id="content" name="Content" required="required"></script><br>
             模块：<select style="width:auto;color:black;" id="Module" name="Module">
                 <option value=1>学无止境</option>
                 <option value=2>科学技术</option>
@@ -146,16 +148,14 @@
         </form>
     </div>
 </div>
-    <!-- /create -->
-    <!-- manage -->
+
     <div id="manage" class="panel">
         <div class="content">
             <h2>管理博客</h2>
 
         </div>
     </div>
-    <!-- /manage -->
-    <!-- Header with Navigation -->
+
     <div id="header">
         <h1>个人博客管理</h1>
         <ul id="navigation">

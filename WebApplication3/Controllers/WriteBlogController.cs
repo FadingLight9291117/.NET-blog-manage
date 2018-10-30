@@ -28,8 +28,7 @@ namespace WebApplication3.Controllers
         public ActionResult Index(blog_Table movie)
         {
             movie.DateTime = DateTime.Now;
-            db.blog_Table.Add(movie);
-            db.SaveChanges();
+            new blog_function().Add(movie);
             return RedirectToAction("Index", "BlogManage");
 
         
