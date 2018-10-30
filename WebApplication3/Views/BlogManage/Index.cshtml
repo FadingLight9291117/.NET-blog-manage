@@ -49,43 +49,6 @@
     }
 </script>
 
-@section scripts {
-    <script>
-        $("#form1").submit(function () {
-            $.ajax({
-                type: "post",
-                url: "/BlogManage/",
-                data: $("#form1").serialize(),
-                dataType: "text",
-                success: function (msg) {
-
-                }
-            });
-        });
-    </script>
-
-    <script>
-        $("#form2").submit(function () {
-            var ue = UE.getEditor('content');
-            var content = ue.getContent();
-            var title = $("#title").val();
-            var synopsis = $("#synopsis").val();
-            var module = $("module").val();
-            $.ajax({
-                type: "post",
-                url: "/BlogManage/",
-                dataType: "json",
-                data: {
-                    "title": title,
-                    "content": content,
-                    "synopsis": synopsis,
-                    "module": module
-                }
-
-    </script>
-}
-
-
 <div id="editprofile" class="panel">
      <div class="content">
          <h2>修改信息</h2>
