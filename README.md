@@ -13,5 +13,6 @@
   <p><span>服务器端：</span>王声禄</p>
 </div>
 
-<p>运行截图</p>
-<img url="https://github.com/FadingLight9291117/ASP.NET-blog/blob/master/img/2018-11-12.png"/>
+<h2>运行截图</h2>
+![Image text](https://github.com/FadingLight9291117/ASP.NET-blog/blob/master/img/2018-11-12.png)
+
