@@ -14,5 +14,5 @@
 </div>
 
 <h2>运行截图</h2>
-![Image text](https://raw.githubusercontent.com/FadingLight9291117/ASP.NET-blog/master/img/2018-11-12.png)
+![Image](https://raw.githubusercontent.com/FadingLight9291117/ASP.NET-blog/master/img/2018-11-12.png)
 
