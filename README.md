@@ -12,3 +12,6 @@
   <p><span>后端：</span>陈仲为 刘镇</p>
   <p><span>服务器端：</span>王声禄</p>
 </div>
+
+<p>运行截图</p>
+<img url="https://github.com/FadingLight9291117/ASP.NET-blog/blob/master/img/2018-11-12.png"/>
