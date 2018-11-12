@@ -13,6 +13,9 @@
   <p><span>服务器端：</span>王声禄</p>
 </div>
 
+<h3>可通过服务器IP地址访问</h3>
+http://39.106.163.218:8083
+
 <h2>运行截图</h2>
 
 ![Image](https://raw.githubusercontent.com/FadingLight9291117/ASP.NET-blog/master/img/2018-11-12.png)
